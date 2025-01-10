@@ -2,6 +2,9 @@ import { Telegraf } from 'telegraf';
 import { processUserMessage } from '../services/dialogChain';
 import { checkAvailability, getAvailableSlots, createAppointment } from '../services/googleCalendar';
 import { extractDateTime } from '../utils/dateUtils';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 // Глобальные переменные для отслеживания состояния
 let isPendingConfirmation: boolean = false; // Ожидание подтверждения записи

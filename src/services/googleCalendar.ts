@@ -1,12 +1,15 @@
 import { google } from 'googleapis';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const calendar = google.calendar('v3');
 const auth = new google.auth.OAuth2(
-  "384732578674-igok6s2reibfkjg1um019o4ij14qchf2.apps.googleusercontent.com",
-  "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"
+  process.env.GOOGLE_CLIENT_ID,
+  process.env.GOOGLE_CLIENT_SECRET
 );
 
-auth.setCredentials({ refresh_token: "1//09E0hqxGQ7Y2KCgYIARAAGAkSNwF-L9IrjC17YQZxCeaV2euvaZS0tTMb8EYIIqoAAeFMcF8-OvB29K4A4hp4IJd4tbcSk8RSI60" });
+auth.setCredentials({ refresh_token: process.env.GOOGLE_REFRESH_TOKEN });
 
 const PROCEDURE_DURATION_MINUTES = 45; // Длительность процедуры в минутах
 

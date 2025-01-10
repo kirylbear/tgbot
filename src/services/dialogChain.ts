@@ -1,9 +1,12 @@
 import { ChatOpenAI } from '@langchain/openai';
 import { ConversationChain } from "langchain/chains";
 import { SystemMessagePromptTemplate, ChatPromptTemplate, HumanMessagePromptTemplate } from '@langchain/core/prompts';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const chat = new ChatOpenAI({
-  openAIApiKey: "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", // Ключ API OpenAI
+  openAIApiKey: process.env.OPENAI_API_KEY, // Используем ключ из переменных окружения
   temperature: 0.7, // Контролируем креативность
   model: "gpt-4o-mini"
 });
