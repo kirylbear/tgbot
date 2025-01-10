@@ -1,0 +1,1 @@
+{"root":["../src/index.ts","../src/bot/telegrambot.ts","../src/services/dialogchain.ts","../src/services/googlecalendar.ts","../src/utils/dateutils.ts"],"errors":true,"version":"5.7.2"}
